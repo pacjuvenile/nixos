@@ -47,6 +47,7 @@
 
     # tool chain
     bun
+    deno
     nodejs_24
     tree-sitter
     gcc
@@ -57,6 +58,12 @@
     # language server    
     lua-language-server
     marksman
+  ];
+
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = "https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz";
+    }))
   ];
 
   programs.zsh.enable = true;
