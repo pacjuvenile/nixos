@@ -32,6 +32,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    yazi
     neovim
     git
     curl
@@ -66,7 +67,9 @@
     }))
   ];
 
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+  };
 
   users.users.pacjuvenile = {
     isNormalUser = true;
