@@ -32,19 +32,25 @@
   };
 
   environment.systemPackages = with pkgs; [
-    yazi
-    neovim
-    git
-    curl
-    wget
+    # system
     unzip
     gzip
     gnutar
     xclip
-    fzf
-    ripgrep
+    git
+    curl
+    wget
     fd
+    ripgrep
+    ffmpeg
+    # mpv
+
+    # user
+    neovim
     zsh
+    fzf
+    starship
+    yazi
 
     # tool chain
     bun
