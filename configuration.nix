@@ -41,6 +41,7 @@
     curl
     wget
     fd
+    tree
     ripgrep
     ffmpeg
     # mpv
@@ -56,9 +57,11 @@
     bun
     deno
     nodejs_24
+    yarn
     tree-sitter
     gcc
     gnumake
+    cmake
     rustup
     cargo
 
