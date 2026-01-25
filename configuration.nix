@@ -54,16 +54,21 @@
     yazi
 
     # tool chain
-    bun
-    deno
+    #js/ts
     nodejs_24
+    deno
     yarn
+    bun
     tree-sitter
+    # c/cpp
     gcc
     gnumake
     cmake
+    # rust
     rustup
     cargo
+    # python
+    python3
 
     # language server    
     lua-language-server
