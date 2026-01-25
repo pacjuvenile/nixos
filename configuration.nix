@@ -66,9 +66,8 @@
     cmake
     # rust
     rustup
-    cargo
     # python
-    python3
+    python313Packages.python
 
     # language server    
     lua-language-server
