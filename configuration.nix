@@ -65,13 +65,14 @@
     gnumake
     cmake
     # rust
-    rustup
+    rustup  # 含rustc、cargo、rust-analyzer、rustfmt等一系列工具
     # python
     python313Packages.python
 
     # language server    
     lua-language-server
     marksman
+    pyright
   ];
 
   nixpkgs.overlays = [
