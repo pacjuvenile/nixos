@@ -43,6 +43,7 @@
     fd
     tree
     ripgrep
+    opencv
     ffmpeg
     # mpv
 
