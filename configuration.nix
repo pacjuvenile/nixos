@@ -74,6 +74,7 @@
     lua-language-server
     marksman
     pyright
+    svls
   ];
 
   nixpkgs.overlays = [
