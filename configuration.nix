@@ -37,7 +37,6 @@
     gzip
     gnutar
     xclip
-    xdg-utils
     git
     curl
     wget
