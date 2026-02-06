@@ -75,6 +75,7 @@
     marksman
     pyright
     svls
+    yaml-language-server
   ];
 
   nixpkgs.overlays = [
