@@ -67,6 +67,8 @@
     cmake
     # rust
     rustup  # 含rustc、cargo、rust-analyzer、rustfmt等一系列工具
+    # ruby
+    rbenv
     # python
     python313Packages.python
 
