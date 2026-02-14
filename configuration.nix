@@ -69,6 +69,8 @@
     rustup  # 含rustc、cargo、rust-analyzer、rustfmt等一系列工具
     # python
     python313Packages.python
+    # android
+    android-tools
 
     # language server    
     lua-language-server
