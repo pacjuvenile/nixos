@@ -78,6 +78,7 @@
     pyright
     svls
     yaml-language-server
+    ruby-lsp
   ];
 
   nixpkgs.overlays = [
