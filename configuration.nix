@@ -61,6 +61,7 @@
     yarn
     bun
     tree-sitter
+		typescript-language-server
     # c/cpp
     gcc
     gnumake
