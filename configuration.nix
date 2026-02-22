@@ -45,8 +45,6 @@
     ripgrep
     opencv
     ffmpeg-full
-		ffmpeg.dev
-		# pkg-config
 
     # user
     neovim
@@ -92,6 +90,10 @@
   programs.zsh = {
     enable = true;
   };
+
+	programs.direnv = {
+		enable = true;
+	};
 
   users.users.pacjuvenile = {
     isNormalUser = true;
