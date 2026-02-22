@@ -44,7 +44,9 @@
     tree
     ripgrep
     opencv
-    ffmpeg_7-full
+    ffmpeg-full
+		ffmpeg.dev
+		# pkg-config
 
     # user
     neovim
@@ -67,7 +69,6 @@
     cmake
     # rust
     rustup  # 含rustc、cargo、rust-analyzer、rustfmt等一系列工具
-		pkg-config
     # ruby
     rbenv
     # python
