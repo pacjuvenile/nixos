@@ -44,8 +44,7 @@
     tree
     ripgrep
     opencv
-    ffmpeg
-    # mpv
+    ffmpeg_7-full
 
     # user
     neovim
