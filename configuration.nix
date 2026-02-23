@@ -50,8 +50,9 @@
     neovim
     zsh
     fzf
-    starship
+		zellij
     yazi
+    starship
 
     # tool chain
     #js/ts
