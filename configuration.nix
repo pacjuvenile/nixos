@@ -58,7 +58,6 @@ in {
 		fzf
 		zellij
 		yazi
-		unstable.codex
 		starship
 
 		# tool chain
