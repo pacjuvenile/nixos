@@ -13,6 +13,12 @@ let
   }) {
     system = pkgs.system;
   };
+
+	codex-nix = import (builtins.fetchTarball {
+		url = "https://github.com/SecBear/codex-nix/archive/main.tar.gz";
+	}) {
+		system = pkgs.system;
+	};
 in {
 	imports = [
 		# include nixos-wsl modules
@@ -59,6 +65,7 @@ in {
 		zellij
 		yazi
 		starship
+		codex-nix.packages.${pkgs.system}.default
 
 		# tool chain
 		#js/ts
@@ -100,6 +107,13 @@ in {
 
 	programs.direnv = {
 		enable = true;
+	};
+
+	nix = {
+		package = pkgs.nix;
+		extraOptions = ''
+			experimental-features = nix-command flakes
+		'';
 	};
 
 	users.users.pacjuvenile = {
