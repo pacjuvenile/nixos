@@ -2,21 +2,20 @@
   description = "NixOS-WSL configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
-    # codex-nix.url = "github:SecBear/codex-nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, neovim-nightly-overlay, ... }: {
     nixosConfigurations = {
       "nixos-wsl" = let
-        system = "x86_64-linux"; # WSL 架构，提前定义在作用域内
+        system = "x86_64-linux"; 
       in nixpkgs.lib.nixosSystem {
-        inherit system; # 继承提前定义的 system
+        inherit system; 
         specialArgs = {
-          inherit inputs system; # 传递 system 到模块（可选，方便后续使用）
+          inherit inputs system; 
           unstable = nixpkgs-unstable.legacyPackages.${system};
         };
         modules = [
@@ -26,7 +25,8 @@
 
             wsl.enable = true;
             wsl.defaultUser = "pacjuvenile";
-            system.stateVersion = "25.05";
+						system.stateVersion = "25.05";
+
             time.timeZone = "Asia/Shanghai";
 
             systemd.services.nix-daemon.environment = {
@@ -40,7 +40,6 @@
               nodejs_24 deno yarn bun tree-sitter typescript-language-server
               gcc gnumake cmake rustup rbenv python313
               lua-language-server marksman pyright svls yaml-language-server ruby-lsp
-              # inputs.codex-nix.packages.${pkgs.system}.default
             ];
 
             programs.neovim = {
@@ -49,7 +48,12 @@
             };
 
             programs.zsh = { enable = true; };
-            programs.direnv = { enable = true; };
+            programs.direnv = { 
+							enable = true; 
+							nix-direnv = {
+								enable = true;
+							};
+						};
 
 						virtualisation.podman = {
 							enable = true;
