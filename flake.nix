@@ -5,20 +5,18 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
-    codex-nix.url = "github:SecBear/codex-nix";
+    # codex-nix.url = "github:SecBear/codex-nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, codex-nix, neovim-nightly-overlay, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, nixos-wsl, neovim-nightly-overlay, ... }: {
     nixosConfigurations = {
       "nixos-wsl" = let
-        # ========== 关键修正：提前定义 system 变量 ==========
         system = "x86_64-linux"; # WSL 架构，提前定义在作用域内
       in nixpkgs.lib.nixosSystem {
         inherit system; # 继承提前定义的 system
         specialArgs = {
           inherit inputs system; # 传递 system 到模块（可选，方便后续使用）
-          # 现在 `${system}` 能找到提前定义的变量
           unstable = nixpkgs-unstable.legacyPackages.${system};
         };
         modules = [
@@ -42,7 +40,7 @@
               nodejs_24 deno yarn bun tree-sitter typescript-language-server
               gcc gnumake cmake rustup rbenv python313
               lua-language-server marksman pyright svls yaml-language-server ruby-lsp
-              inputs.codex-nix.packages.${pkgs.system}.default
+              # inputs.codex-nix.packages.${pkgs.system}.default
             ];
 
             programs.neovim = {
@@ -52,6 +50,12 @@
 
             programs.zsh = { enable = true; };
             programs.direnv = { enable = true; };
+
+						virtualisation.podman = {
+							enable = true;
+							dockerCompat = true;
+							defaultNetwork.settings.dns_enabled = true;
+						};
 
             nix = {
               package = pkgs.nix;
