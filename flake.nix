@@ -44,10 +44,13 @@
 
             programs.neovim = {
               enable = true;
-              package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+              package = inputs.neovim-nightly-overlay.packages.${system}.default;
             };
 
-            programs.zsh = { enable = true; };
+            programs.zsh = { 
+							enable = true; 
+						};
+
             programs.direnv = { 
 							enable = true; 
 						};
