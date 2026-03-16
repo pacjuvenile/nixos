@@ -40,6 +40,7 @@
               nodejs_24 deno yarn bun tree-sitter typescript-language-server
               gcc gnumake cmake rustup rbenv python313
               lua-language-server marksman pyright svls yaml-language-server ruby-lsp
+							kmod util-linux ddrescue testdisk
             ];
 
             programs.neovim = {
