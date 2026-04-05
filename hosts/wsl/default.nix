@@ -33,10 +33,7 @@
     opencv ffmpeg-full
 
     # Shell & 终端
-    zsh fzf zellij yazi starship
-
-    # 从 overlay 获取的 prise
-    prise
+    zsh fzf zellij yazi starship tuios
 
     # Node.js 生态
     nodejs_24 deno yarn bun tree-sitter typescript-language-server
