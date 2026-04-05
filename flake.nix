@@ -25,6 +25,13 @@
       };
     in
     {
+      packages.${system} = {
+        prise = (import nixpkgs {
+          inherit system;
+          overlays = [ myOverlay ];
+        }).prise;
+      };
+
       nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs; };
