@@ -33,7 +33,7 @@
     opencv ffmpeg-full
 
     # Shell & 终端
-    zsh fzf tmux yazi starship
+    zsh fzf zellij yazi starship
 
     # Node.js 生态
     nodejs_24 deno yarn bun tree-sitter typescript-language-server
