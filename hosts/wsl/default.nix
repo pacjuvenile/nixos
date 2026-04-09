@@ -39,7 +39,7 @@
     nodejs_24 deno yarn bun tree-sitter typescript-language-server
 
     # 开发工具
-    gcc gnumake cmake rustup rbenv python313
+    gcc gnumake cmake rbenv python313
 
     # LSP
     lua-language-server marksman pyright svls yaml-language-server ruby-lsp
